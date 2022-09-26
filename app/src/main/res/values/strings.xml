@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Projeto2Bruna</string>
+    <string name="boas_vindas">Seja bem vindo</string>
+    <string name="cadastrar">Clique aqui para se cadastrar</string>
+    <string name="login">Login usuário</string>
+    <string name="password">Senha</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="userpassinvalid">Usuário ou senha inválidos</string>
+
+</resources>
