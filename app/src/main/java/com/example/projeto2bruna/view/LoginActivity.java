@@ -51,11 +51,4 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenterCo
         return this;
     }
 
-    /*@Override
-    public void validLogin(User user) {
-        Intent intent = new Intent(this, MainActivity.class);
-        //substituído devido ao parcelable   intent.putExtra("userId", user.getId());
-        intent.putExtra("userObj", user);
-        startActivity(intent);
-    } virou comentário quanto mudamos o validLogin para dentro da view */
 }

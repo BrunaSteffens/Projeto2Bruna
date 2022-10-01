@@ -16,11 +16,18 @@
         android:theme="@style/Theme.Projeto2Bruna"
         tools:targetApi="31">
         <activity
-            android:name=".view.Activity2"
+            android:name=".view.PostsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AlbumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.UsersActivity"
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".view.LoginActivity"
             android:exported="true">

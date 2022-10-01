@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     dataBinding{
-        enabled = true
+        enabled = true;
     }
 
     defaultConfig {

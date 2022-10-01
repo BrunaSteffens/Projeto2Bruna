@@ -9,12 +9,20 @@ public class User implements Parcelable {
     private String name;
     private String userLogin;
     private String password;
+    private String email;
+    private String phone;
 
-    public User(int id, String name, String userLogin, String password) {
+    public User(int id) {
+        this.id = id;
+    }
+
+    public User(int id, String name, String userLogin, String password, String email, String phone) {
         this.id = id;
         this.name = name;
         this.userLogin = userLogin;
         this.password = password;
+        this.email = email;
+        this.phone = phone;
     }
 
     protected User(Parcel in) {
@@ -22,6 +30,8 @@ public class User implements Parcelable {
         name = in.readString();
         userLogin = in.readString();
         password = in.readString();
+        email = in.readString();
+        phone = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -35,6 +45,9 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
+
+    public User() {
+    }
 
     public int getId() { return id; }
 
@@ -52,6 +65,14 @@ public class User implements Parcelable {
         return userLogin;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -67,5 +88,7 @@ public class User implements Parcelable {
         parcel.writeString(name);
         parcel.writeString(userLogin);
         parcel.writeString(password);
+        parcel.writeString(email);
+        parcel.writeString(phone);
     }
 }

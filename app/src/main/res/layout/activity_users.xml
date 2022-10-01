@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.projeto2bruna.model.User" />
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.UsersActivity">
+
+    <TextView
+        android:id="@+id/userLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPosts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Posts"
+        app:layout_constraintEnd_toEndOf="@+id/userLogin"
+        app:layout_constraintStart_toStartOf="@+id/userLogin"
+        app:layout_constraintTop_toBottomOf="@+id/userLogin" />
+
+    <Button
+        android:id="@+id/buttonComments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Comentários"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPosts"
+        app:layout_constraintStart_toStartOf="@+id/buttonPosts"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPosts" />
+
+    <Button
+        android:id="@+id/buttonAlbums"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Álbuns"
+        app:layout_constraintEnd_toEndOf="@+id/buttonComments"
+        app:layout_constraintStart_toStartOf="@+id/buttonComments"
+        app:layout_constraintTop_toBottomOf="@+id/buttonComments" />
+
+    <Button
+        android:id="@+id/buttonPhotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Fotos"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAlbums"
+        app:layout_constraintStart_toStartOf="@+id/buttonAlbums"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAlbums" />
+
+    <Button
+        android:id="@+id/buttonToDos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="To do"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPhotos"
+        app:layout_constraintStart_toStartOf="@+id/buttonPhotos"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPhotos" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

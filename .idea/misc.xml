@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_2.xml" value="0.33" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_2.xml" value="0.22" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_album.xml" value="0.22" />
         <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_posts.xml" value="0.1" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/activity_users.xml" value="0.18693693693693694" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/layout_albums_vh.xml" value="0.33" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/layout_posts_vh.xml" value="0.33" />
         <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/layout_user.xml" value="0.16259057971014493" />
-        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/layout_user_vh.xml" value="0.1" />
+        <entry key="..\:/Users/bruna/AndroidStudioProjects/Projeto2Bruna/app/src/main/res/layout/layout_user_vh.xml" value="0.5" />
       </map>
     </option>
   </component>

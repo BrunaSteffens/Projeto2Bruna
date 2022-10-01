@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">Projeto2Bruna</string>
-    <string name="boas_vindas">Seja bem vindo</string>
+    <string name="boas_vindas">Seja bem vindo!</string>
     <string name="cadastrar">Clique aqui para se cadastrar</string>
     <string name="login">Login usuário</string>
     <string name="password">Senha</string>
     <string name="confirmar">Confirmar</string>
     <string name="userpassinvalid">Usuário ou senha inválidos</string>
+    <string name="listaUsuarios">Os usuários cadastrados são:</string>
+    <string name="albums">Álbuns do usuário</string>
+    <string name="albumId">ID do álbum</string>
+    <string name="albumTitle">Título do álbum</string>
+    <string name="verAlbum">Ver álbuns</string>
 
 </resources>
