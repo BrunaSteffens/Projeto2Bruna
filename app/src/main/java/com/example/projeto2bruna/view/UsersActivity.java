@@ -1,22 +1,14 @@
 package com.example.projeto2bruna.view;
 
-import static com.example.projeto2bruna.BR.user;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import com.example.projeto2bruna.R;
-import com.example.projeto2bruna.adapter.UserAdapter;
 import com.example.projeto2bruna.databinding.ActivityUsersBinding;
 import com.example.projeto2bruna.model.User;
-import com.example.projeto2bruna.presenter.UserContract;
-import com.example.projeto2bruna.presenter.UserPresenter;
-import com.example.projeto2bruna.repository.UserRepository;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class UsersActivity extends AppCompatActivity{

@@ -1,20 +1,14 @@
 package com.example.projeto2bruna.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projeto2bruna.R;
 import com.example.projeto2bruna.adapter.AlbumsAdapter;
 import com.example.projeto2bruna.databinding.ActivityAlbumBinding;
-import com.example.projeto2bruna.model.Albums;
-import com.example.projeto2bruna.model.User;
-import com.example.projeto2bruna.presenter.UserContract;
-import com.example.projeto2bruna.presenter.UserPresenter;
 import com.example.projeto2bruna.repository.AlbumRepository;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
