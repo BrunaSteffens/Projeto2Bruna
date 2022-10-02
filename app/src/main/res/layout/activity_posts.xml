@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="user"
+            name="posts"
             type="com.example.projeto2bruna.model.Posts" />
     </data>
 
@@ -17,9 +17,22 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPosts"
-        android:layout_width="391dp"
-        android:layout_height="805dp"
+        android:layout_width="399dp"
+        android:layout_height="599dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Posts do usuário"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -40,14 +40,23 @@ public class UsersActivity extends AppCompatActivity{
                 }
         );
 
-        /*findViewById(R.id.buttonPosts).setOnClickListener(
+        findViewById(R.id.buttonPosts).setOnClickListener(
                 (view) ->{
                     Intent intentPosts = new Intent(this, PostsActivity.class);
-                    intentPosts.putExtra("id",user1.getId());
+                    intentPosts.putExtra("objetoUsuário",user1);
                     startActivity(intentPosts);
                     Log.d(TAG, "onCreate: Activity dos Posts");
                 }
-        );*/
+        );
+
+        findViewById(R.id.buttonToDos).setOnClickListener(
+                (view) ->{
+                    Intent intentPosts = new Intent(this, PostsActivity.class);
+                    intentPosts.putExtra("objetoUsuário",user1);
+                    startActivity(intentPosts);
+                    Log.d(TAG, "onCreate: Activity dos Posts");
+                }
+        );
 
 
     }

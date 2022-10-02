@@ -26,7 +26,7 @@ public class PostsActivity extends AppCompatActivity {
         layout = DataBindingUtil.setContentView(this, R.layout.activity_posts);
         Posts p = getIntent().getParcelableExtra("userId");
 
-        layout.setUser(p);
+        layout.setPosts(p);
         Log.d(TAG, "onCreate: Aqui pegou o usuário do post");
 
 
