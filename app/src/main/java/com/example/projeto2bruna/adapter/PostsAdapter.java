@@ -20,7 +20,9 @@ public class PostsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private static final String TAG = "PostsAdapter";
     private List<Posts> postsList;
 
-    public PostsAdapter(List<Posts> postsList){ this.postsList = postsList;}
+    public PostsAdapter(List<Posts> postsList){
+        this.postsList = postsList;
+    }
 
 
     @NonNull
