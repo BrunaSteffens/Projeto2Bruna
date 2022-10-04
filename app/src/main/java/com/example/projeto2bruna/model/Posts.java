@@ -59,6 +59,10 @@ public class Posts extends User implements Parcelable {
         }
     };
 
+    public Posts(int postId) {
+        this.postId = postId;
+    }
+
     @Override
     public int describeContents() {
         return 0;

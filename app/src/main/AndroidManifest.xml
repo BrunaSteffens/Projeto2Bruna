@@ -16,7 +16,10 @@
         android:theme="@style/Theme.Projeto2Bruna"
         tools:targetApi="31">
         <activity
-            android:name="view.TodosActivity"
+            android:name=".view.CommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.TodosActivity"
             android:exported="false" />
         <activity
             android:name=".view.PostsActivity"

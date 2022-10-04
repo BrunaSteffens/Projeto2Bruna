@@ -41,7 +41,6 @@ public class PostsRepository {
                                 response.length();
                                 for (int i = 0; i < response.length(); i++) {
                                     try {
-                                        ;
                                         JSONObject json = response.getJSONObject(i);
                                         posts.add(new Posts(json.getInt("userId"), json.getInt("id"), json.getString("title"),
                                                 json.getString("body")));

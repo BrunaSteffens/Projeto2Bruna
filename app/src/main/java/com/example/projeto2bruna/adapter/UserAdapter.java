@@ -44,7 +44,6 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         holder.itemView.setOnClickListener((view) -> {
             Intent intent = new Intent(view.getContext(), UsersActivity.class);
             intent.putExtra("objetoUsuario", objeto);
-            intent.putExtra("username", objeto.getUserLogin());
             view.getContext().startActivity(intent);
             Log.d(TAG, "onBindViewHolder: Página do usuário " + objeto.getName());
             }

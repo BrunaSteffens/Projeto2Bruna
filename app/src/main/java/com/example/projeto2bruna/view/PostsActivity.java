@@ -24,18 +24,14 @@ public class PostsActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_posts);
 
         layout = DataBindingUtil.setContentView(this, R.layout.activity_posts);
-        Posts p = getIntent().getParcelableExtra("userId");
-
+        Posts p = getIntent().getParcelableExtra("objetoUsuario");
         layout.setPosts(p);
         Log.d(TAG, "onCreate: Aqui pegou o usuário do post");
-
 
         RecyclerView rv = findViewById(R.id.recyclerPosts);
         PostsAdapter adapter = new PostsAdapter(PostsRepository.getInstance(this).getPosts(p));
         rv.setAdapter(adapter);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
-
-
     }
 }

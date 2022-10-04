@@ -24,6 +24,15 @@ public class Comments extends Posts implements Parcelable {
         this.commentBody = commentBody;
     }
 
+    public Comments(int id,
+                    int commentId, String commentTitle, String commentEmail, String commentBody) {
+        super(id);
+        this.commentId = commentId;
+        this.commentTitle = commentTitle;
+        this.commentEmail = commentEmail;
+        this.commentBody = commentBody;
+    }
+
     public Comments(Parcel in,
                     int commentId, String commentTitle, String commentEmail, String commentBody) {
         super(in);

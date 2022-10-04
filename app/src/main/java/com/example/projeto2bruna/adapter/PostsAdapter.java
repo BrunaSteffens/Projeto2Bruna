@@ -44,8 +44,7 @@ public class PostsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         holder.itemView.setOnClickListener(
                 (view) ->{
                     Intent intent = new Intent(view.getContext(), PostsActivity.class);
-                    intent.putExtra("id", objeto.getPostId());
-                    intent.putExtra("userId", objeto.getId());
+                    intent.putExtra("objetoUsuario", objeto);
                     view.getContext().startActivity(intent);
                     Log.d(TAG, "onBindViewHolder: Posts do usuário" + objeto.getName());
                 }
