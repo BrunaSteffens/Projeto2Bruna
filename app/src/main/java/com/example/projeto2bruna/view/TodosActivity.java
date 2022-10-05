@@ -29,7 +29,7 @@ public class TodosActivity extends AppCompatActivity {
         layout = DataBindingUtil.setContentView(this, R.layout.activity_todos);
         Todos t = getIntent().getParcelableExtra("objetoUsuario");
         layout.setTodos(t);
-        Log.d(TAG, "onCreate: Aqui pegou o usuário da tarefa" + t.getName());
+        Log.d(TAG, "onCreate: Aqui pegou o usuário da tarefa");
 
         RecyclerView rv = findViewById(R.id.recyclerTodos);
         TodosAdapter adapter = new TodosAdapter(TodosRepository.getInstance(this).getTodos());

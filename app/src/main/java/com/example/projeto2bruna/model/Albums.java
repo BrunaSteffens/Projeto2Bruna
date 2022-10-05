@@ -1,8 +1,9 @@
 package com.example.projeto2bruna.model;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Albums extends User{
+public class Albums extends User implements Parcelable{
 
     private int albumId;
     private String title;
@@ -40,11 +41,13 @@ public class Albums extends User{
     public static final Creator<Albums> CREATOR = new Creator<Albums>() {
         @Override
         public Albums createFromParcel(Parcel in) {
+
             return new Albums(in);
         }
 
         @Override
         public Albums[] newArray(int size) {
+
             return new Albums[size];
         }
     };

@@ -1,12 +1,14 @@
 package com.example.projeto2bruna.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projeto2bruna.R;
 import com.example.projeto2bruna.adapter.AlbumsAdapter;
 import com.example.projeto2bruna.databinding.ActivityAlbumBinding;
+import com.example.projeto2bruna.model.Albums;
 import com.example.projeto2bruna.repository.AlbumRepository;
 
 import android.os.Bundle;
@@ -19,16 +21,19 @@ public class AlbumActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album);
+        //setContentView(R.layout.activity_album);
 
         Log.d(TAG, "onCreate: Iniciando a activity dos álbuns");
         //setContentView(R.layout.activity_album);
 
-        /*layout = DataBindingUtil.setContentView(this, R.layout.activity_album);
-        User user1 = getIntent().getParcelableExtra("objetoUsuario");
-        Log.d(TAG, "onCreate: Album do usuário "+user1.getName());
+        layout = DataBindingUtil.setContentView(this, R.layout.activity_album);
+        //Albums album = getIntent().getParcelableExtra("idUsuario");
+
+
         AlbumRepository aRepo = AlbumRepository.getInstance(this);
-        layout.setUser(aRepo.getAlbumByUserId(user1.getId()));*/
+        Albums album = aRepo.getAlbumByUserId(getIntent().getIntExtra("idUsuario", 0));
+        layout.setAlbums(album);
+        Log.d(TAG, "onCreate: Album id" + album.getAlbumId());
 
         Log.d(TAG, "onCreate: Iniciando o recycler dos albuns do usuário");
         RecyclerView rv = findViewById(R.id.recyclerAlbums);
