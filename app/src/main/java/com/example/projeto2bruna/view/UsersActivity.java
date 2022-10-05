@@ -37,7 +37,6 @@ public class UsersActivity extends AppCompatActivity{
                     intentAlbum.putExtra("idUsuario", user1.getId());
                     startActivity(intentAlbum);
                     Log.d(TAG, "onCreate: Activity do Album");
-                    finish();
                 }
         );
 
@@ -47,7 +46,6 @@ public class UsersActivity extends AppCompatActivity{
                     intentPosts.putExtra("objetoUsuário",user1);
                     startActivity(intentPosts);
                     Log.d(TAG, "onCreate: Activity dos Posts");
-                    finish();
                 }
         );
 
@@ -57,11 +55,7 @@ public class UsersActivity extends AppCompatActivity{
                     intentTodos.putExtra("objetoUsuário",user1);
                     startActivity(intentTodos);
                     Log.d(TAG, "onCreate: Activity dos Posts");
-                    finish();
                 }
         );
-
-
     }
-
 }

@@ -33,7 +33,7 @@ public class AlbumActivity extends AppCompatActivity  {
         AlbumRepository aRepo = AlbumRepository.getInstance(this);
         Albums album = aRepo.getAlbumByUserId(getIntent().getIntExtra("idUsuario", 0));
         layout.setAlbums(album);
-        Log.d(TAG, "onCreate: Album id" + album.getAlbumId());
+        //Log.d(TAG, "onCreate: Album id" + album.getAlbumId());
 
         Log.d(TAG, "onCreate: Iniciando o recycler dos albuns do usuário");
         RecyclerView rv = findViewById(R.id.recyclerAlbums);

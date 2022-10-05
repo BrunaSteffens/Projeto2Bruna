@@ -18,6 +18,10 @@ public class Albums extends User implements Parcelable{
         super(id, name, userLogin, password, email, phone);
     }
 
+    public Albums(int albumId) {
+        this.albumId = albumId;
+    }
+
     public Albums(){
         super();
     }
