@@ -48,7 +48,6 @@ public class UserRepository {
                 response.length();
                 for(int i=0; i<response.length(); i++){
                     try {
-                        ;
                         JSONObject json = response.getJSONObject(i);
                         users.add( new User(json.getInt("id"), json.getString("name"),
                                 json.getString("username"), json.getString("username"), json.getString("email"), json.getString("phone")));

@@ -77,7 +77,14 @@ public class AlbumRepository {
         return instance;
     }
 
-    public List<Albums> getAlbums(){ return albums; }
+    public List<Albums> getAlbums(int userId){
+        for (Albums a : albums){
+            if(a.getId() == userId){
+                albums.add(a);
+            }
+        }
+        return albums;
+    }
 
 
     public Albums getAlbumById(int albumId){
@@ -94,10 +101,10 @@ public class AlbumRepository {
 
     public Albums getAlbumByUserId(int id){
         Albums ret = null;
-        Log.d(TAG, "getAlbumByUserId: qtd de posts do user" +albums.size());
+        Log.d(TAG, "getAlbumByUserId: qtd de albuns do user" +albums.size());
         for(Albums a: albums){
             if(a.getId() == id){
-                Log.d(TAG, "getPostByUserId: buscando os posts do userId"+a.getId());
+                Log.d(TAG, "getAlbumByUserId: buscando os posts do userId "+a.getId());
                 ret = a;
             }
         }

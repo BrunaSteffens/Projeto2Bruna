@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.projeto2bruna.model.Albums;
 import com.example.projeto2bruna.R;
 import com.example.projeto2bruna.view.AlbumActivity;
+import com.example.projeto2bruna.view.PhotosActivity;
 import com.example.projeto2bruna.view.PostsActivity;
 
 import java.util.List;
@@ -22,7 +23,13 @@ public class AlbumsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private List<Albums> albums;
     private final String TAG = "AlbumsAdapter";
 
-    public AlbumsAdapter(List<Albums> albums){ this.albums = albums;}
+    public AlbumsAdapter(List<Albums> albums){
+        this.albums = albums;
+        for (Albums a: albums
+             ) {
+
+        }
+    }
 
     @NonNull
     @Override
@@ -40,12 +47,12 @@ public class AlbumsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         ((TextView) holder.itemView.findViewById(R.id.textViewAlbumId)).setText(objeto.getAlbumId());
         ((TextView) holder.itemView.findViewById(R.id.textViewAlbumTitle)).setText(objeto.getTitle());
 
-        /*holder.itemView.setOnClickListener(
+        holder.itemView.setOnClickListener(
                 (view) ->{
                     Intent intent = new Intent(view.getContext(), PhotosActivity.class);
                     intent.putExtra("id", objeto.getAlbumId());
-                    intent.putExtra("userId", objeto.getId()); <-não vai ser necessário visto que as photos nao recebem o id do user
-                }); */
+                    //intent.putExtra("userId", objeto.getId()); <-não vai ser necessário visto que as photos nao recebem o id do user
+                });
     }
 
     @Override

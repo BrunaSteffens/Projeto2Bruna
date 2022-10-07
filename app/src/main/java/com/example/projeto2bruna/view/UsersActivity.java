@@ -34,7 +34,7 @@ public class UsersActivity extends AppCompatActivity{
                 (view) ->{
 
                     Intent intentAlbum = new Intent(this, AlbumActivity.class);
-                    intentAlbum.putExtra("idUsuario", user1.getId());
+                    intentAlbum.putExtra("objetoUsuario", user1);
                     startActivity(intentAlbum);
                     Log.d(TAG, "onCreate: Activity do Album");
                 }
