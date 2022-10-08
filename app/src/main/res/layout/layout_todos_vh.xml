@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#8BC34A"
-    android:backgroundTint="#8BC34A">
+    android:layout_margin="5dp"
+    android:background="#BCBBBB">
 
     <TextView
         android:id="@+id/vhTodoId"
         android:layout_width="36dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="341dp"
         android:text="id"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,6 +30,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:text="To-Do Title"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +41,8 @@
 
     <TextView
         android:id="@+id/vhTodoStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="234dp"
+        android:layout_height="22dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Status"
@@ -49,5 +51,23 @@
         app:layout_constraintEnd_toEndOf="@+id/vhTodoTitle"
         app:layout_constraintStart_toStartOf="@+id/vhTodoTitle"
         app:layout_constraintTop_toBottomOf="@+id/vhTodoTitle" />
+
+    <TextView
+        android:id="@+id/tvTodoUserId"
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:text="@string/UserId"
+        app:layout_constraintStart_toStartOf="@+id/vhTodoId"
+        app:layout_constraintTop_toTopOf="@+id/tvTodoUserName" />
+
+    <TextView
+        android:id="@+id/tvTodoUserName"
+        android:layout_width="293dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/userName"
+        app:layout_constraintEnd_toEndOf="@+id/vhTodoTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvTodoUserId"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

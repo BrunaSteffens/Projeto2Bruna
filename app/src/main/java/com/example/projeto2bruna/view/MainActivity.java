@@ -25,15 +25,57 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Iniciando a MainActivity");
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.buttonUsers).setOnClickListener(
+                (view)->{
+                    Intent intentUsers = new Intent(this, UsersActivity.class);
+                    startActivity(intentUsers);
+                    Log.d(TAG, "onCreate: Partiu para activity dos usuários");
+                }
+
+        );
+
+        findViewById(R.id.buttonAlbums).setOnClickListener(
+                (view) ->{
+                    Intent intentAlbum = new Intent(this, AlbumActivity.class);
+                    startActivity(intentAlbum);
+                    Log.d(TAG, "onCreate: Partiu para activity dos Album");
+                }
+        );
+
+        findViewById(R.id.buttonPosts).setOnClickListener(
+                (view) ->{
+                    Intent intentPosts = new Intent(this, PostsActivity.class);
+                    startActivity(intentPosts);
+                    Log.d(TAG, "onCreate: Partiu para activity dos Posts");
+                }
+        );
+
+        findViewById(R.id.buttonTodos).setOnClickListener(
+                (view) ->{
+                    Intent intentTodos = new Intent(this, TodosActivity.class);
+                    startActivity(intentTodos);
+                    Log.d(TAG, "onCreate: Partiu para activity das Tarefas");
+                }
+        );
 
 
-        //Colocar aqui o novo recycler view que eu fiz
+        findViewById(R.id.buttonComments).setOnClickListener(
+                (view) ->{
+                    Intent intentComments = new Intent(this, CommentsActivity.class);
+                    startActivity(intentComments);
+                    Log.d(TAG, "onCreate: Partiu para activity dos Comentarios");
+                }
+        );
 
-        Log.d(TAG, "onCreate: Construindo o recycler view dos usuários");
-        RecyclerView rv = findViewById(R.id.recyclerUser);
-        UserAdapter adapter = new UserAdapter(UserRepository.getInstance(this).getUsers());
-        rv.setAdapter(adapter);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        rv.setLayoutManager(llm);
+
+        findViewById(R.id.buttonPhotos).setOnClickListener(
+                (view) ->{
+                    Intent intentPhotos = new Intent(this, PhotosActivity.class);
+                    startActivity(intentPhotos);
+                    Log.d(TAG, "onCreate: Partiu para activity das Fotos");
+                }
+        );
+
+
     }
 }

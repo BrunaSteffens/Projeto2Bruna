@@ -4,37 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#8BC34A">
+    android:layout_margin="5dp"
+    android:background="#BCBBBB">
 
     <TextView
         android:id="@+id/TextViewPhotoId"
-        android:layout_width="37dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="32dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="12dp"
         android:text="Id"
         android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="115dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
+    <EditText
         android:id="@+id/TextViewPhotoTitle"
-        android:layout_width="339dp"
-        android:layout_height="36dp"
-        android:text="Título da foto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TextViewPhotoId"
-        app:layout_constraintTop_toTopOf="@+id/TextViewPhotoId" />
-
-    <TextView
-        android:id="@+id/textViewPhotoURL"
-        android:layout_width="371dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="URL da foto"
+        android:layout_width="238dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewPhotoTitle" />
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/TextViewPhotoId" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

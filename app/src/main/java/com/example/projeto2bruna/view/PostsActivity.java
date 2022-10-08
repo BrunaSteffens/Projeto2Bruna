@@ -16,20 +16,14 @@ import com.example.projeto2bruna.repository.PostsRepository;
 
 public class PostsActivity extends AppCompatActivity {
     private static final String TAG = "PostsActivity";
-    private ActivityPostsBinding layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_posts);
-
-        layout = DataBindingUtil.setContentView(this, R.layout.activity_posts);
-        Posts p = getIntent().getParcelableExtra("objetoUsuario");
-        layout.setPosts(p);
-        Log.d(TAG, "onCreate: Aqui pegou o usuário do post");
+        setContentView(R.layout.activity_posts);
 
         RecyclerView rv = findViewById(R.id.recyclerPosts);
-        PostsAdapter adapter = new PostsAdapter(PostsRepository.getInstance(this).getPosts(p));
+        PostsAdapter adapter = new PostsAdapter(PostsRepository.getInstance(this).getPosts());
         rv.setAdapter(adapter);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);

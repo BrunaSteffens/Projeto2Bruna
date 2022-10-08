@@ -66,7 +66,7 @@ public class CommentsRepository {
         return instance;
     }
 
-    public List<Comments> getComments(Comments c){ return comments;}
+    public List<Comments> getComments(){ return comments;}
 
     public Comments getCommentById(int id){
         Comments ret = null;

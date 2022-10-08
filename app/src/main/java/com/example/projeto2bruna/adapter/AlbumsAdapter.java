@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projeto2bruna.model.Albums;
 import com.example.projeto2bruna.R;
+import com.example.projeto2bruna.model.User;
 import com.example.projeto2bruna.view.AlbumActivity;
 import com.example.projeto2bruna.view.PhotosActivity;
 import com.example.projeto2bruna.view.PostsActivity;
@@ -42,17 +43,13 @@ public class AlbumsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Log.d(TAG, "onBindViewHolder: inicindo o view holder, antes do IF");
         Albums objeto = albums.get(position);
-        ((TextView) holder.itemView.findViewById(R.id.textViewAlbumId)).setText(objeto.getAlbumId());
+        ((TextView) holder.itemView.findViewById(R.id.textViewAlbumId)).setText(objeto.getAlbumId()+"");
         ((TextView) holder.itemView.findViewById(R.id.textViewAlbumTitle)).setText(objeto.getTitle());
+        ((TextView) holder.itemView.findViewById(R.id.tvAlbumsUserId)).setText(objeto.getId() + "");
+        ((TextView) holder.itemView.findViewById(R.id.tvAlbumUserName)).setText(objeto.getName());
 
-        holder.itemView.setOnClickListener(
-                (view) ->{
-                    Intent intent = new Intent(view.getContext(), PhotosActivity.class);
-                    intent.putExtra("id", objeto.getAlbumId());
-                    //intent.putExtra("userId", objeto.getId()); <-não vai ser necessário visto que as photos nao recebem o id do user
-                });
+
     }
 
     @Override

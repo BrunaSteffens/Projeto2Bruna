@@ -62,7 +62,6 @@ public class UserRepository {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "onErrorResponse: " + error.getMessage());
-
             }
         });
 

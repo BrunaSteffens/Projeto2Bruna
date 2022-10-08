@@ -6,44 +6,44 @@ import android.os.Parcelable;
 public class Posts extends User implements Parcelable {
 
     private int postId;
-    private String postName;
+    private String postTitle;
     private String postBody;
 
     public Posts(){
         super();
     }
 
-    public Posts(int id, int postId, String postName, String postBody) {
+    public Posts(int id, int postId, String postTitle, String postBody) {
         super(id);
         this.postId = postId;
-        this.postName = postName;
+        this.postTitle = postTitle;
         this.postBody = postBody;
     }
 
-    public Posts(int id, String name, String userLogin, String password, String email, String phone, int postId, String postName, String postBody) {
+    public Posts(int id, String name, String userLogin, String password, String email, String phone, int postId, String postTitle, String postBody) {
         super(id, name, userLogin, password, email, phone);
         this.postId = postId;
-        this.postName = postName;
+        this.postTitle = postTitle;
         this.postBody = postBody;
     }
 
-    public Posts(Parcel in, int postId, String postName, String postBody) {
+    public Posts(Parcel in, int postId, String postTitle, String postBody) {
         super(in);
         this.postId = postId;
-        this.postName = postName;
+        this.postTitle = postTitle;
         this.postBody = postBody;
     }
 
-    public Posts(int postId, String postName, String postBody) {
+    public Posts(int postId, String postTitle, String postBody) {
         this.postId = postId;
-        this.postName = postName;
+        this.postTitle = postTitle;
         this.postBody = postBody;
     }
 
     protected Posts(Parcel in){
         super(in);
         postId = in.readInt();
-        postName = in.readString();
+        postTitle = in.readString();
         postBody = in.readString();
     }
 
@@ -71,7 +71,7 @@ public class Posts extends User implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i){
         parcel.writeInt(postId);
-        parcel.writeString(postName);
+        parcel.writeString(postTitle);
         parcel.writeString(postBody);
     }
 
@@ -79,8 +79,8 @@ public class Posts extends User implements Parcelable {
         return postId;
     }
 
-    public String getPostName() {
-        return postName;
+    public String getPostTitle() {
+        return postTitle;
     }
 
     public String getPostBody() {

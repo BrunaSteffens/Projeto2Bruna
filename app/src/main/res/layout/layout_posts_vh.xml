@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="#BCBBBB">
 
     <TextView
         android:id="@+id/postId"
@@ -13,28 +15,42 @@
         android:layout_marginTop="16dp"
         android:text="PostId"
         app:layout_constraintEnd_toStartOf="@+id/postTitle"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/postTitle"
-        android:layout_width="279dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="348dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
         android:text="PostTilte"
-        app:layout_constraintBottom_toBottomOf="@+id/postId"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/postId" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostsEmail" />
 
     <EditText
         android:id="@+id/postBody"
-        android:layout_width="362dp"
-        android:layout_height="86dp"
+        android:layout_width="361dp"
+        android:layout_height="111dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/postTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvPostsEmail"
+        android:layout_width="274dp"
+        android:layout_height="26dp"
+        android:text="@string/Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/postId"
+        app:layout_constraintTop_toTopOf="@+id/postId" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,32 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:background="#C4409BE1">
 
     <TextView
         android:id="@+id/textViewAlbumId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="81dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/albumId"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewAlbumTitle"
+        app:layout_constraintEnd_toEndOf="@+id/tvAlbumsUserId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvAlbumsUserId"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlbumsUserId"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewAlbumTitle"
+        android:layout_width="250dp"
+        android:layout_height="18dp"
+        android:text="@string/albumTitle"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/tvAlbumUserName"
+        app:layout_constraintTop_toTopOf="@+id/textViewAlbumId" />
+
+    <TextView
+        android:id="@+id/tvAlbumsUserId"
+        android:layout_width="90dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/UserId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewAlbumTitle"
-        android:layout_width="163dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/albumTitle"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewAlbumId"
+        android:id="@+id/tvAlbumUserName"
+        android:layout_width="250dp"
+        android:layout_height="18dp"
+        android:text="@string/userName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewAlbumId"
-        app:layout_constraintTop_toTopOf="@+id/textViewAlbumId" />
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/tvAlbumsUserId"
+        app:layout_constraintTop_toTopOf="@+id/tvAlbumsUserId" />
 </androidx.constraintlayout.widget.ConstraintLayout>

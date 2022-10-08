@@ -22,14 +22,8 @@ public class TodosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_todos);
-
+        setContentView(R.layout.activity_todos);
         Log.d(TAG, "onCreate: Iniciando a activity das tarefas");
-
-        layout = DataBindingUtil.setContentView(this, R.layout.activity_todos);
-        Todos t = getIntent().getParcelableExtra("objetoUsuario");
-        layout.setTodos(t);
-        Log.d(TAG, "onCreate: Aqui pegou o usuário da tarefa");
 
         RecyclerView rv = findViewById(R.id.recyclerTodos);
         TodosAdapter adapter = new TodosAdapter(TodosRepository.getInstance(this).getTodos());

@@ -54,6 +54,23 @@ public class Photos extends Albums implements Parcelable {
         return photoId;
     }
 
+    public String getPhotoTitle() {
+        return photoTitle;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public String getPhotoThumbnailUrl() {
+        return photoThumbnailUrl;
+    }
+
+    public int getPhotoByAlbumID(int i){
+        this.photoId = getAlbumId();
+        return photoId;
+    }
+
     public Photos(Parcel in, int photoId, String photoTitle, String photoUrl, String photoThumbnailUrl) {
         super(in);
         this.photoId = photoId;

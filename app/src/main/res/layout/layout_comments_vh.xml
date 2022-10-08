@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#BCBBBB">
 
     <TextView
         android:id="@+id/commentId"
@@ -30,11 +31,13 @@
     <EditText
         android:id="@+id/commentBody"
         android:layout_width="362dp"
-        android:layout_height="93dp"
+        android:layout_height="148dp"
+        android:layout_margin="5dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="17dp" />
 
@@ -42,7 +45,7 @@
         android:id="@+id/commentTitle"
         android:layout_width="364dp"
         android:layout_height="38dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Comment Title"
         app:layout_constraintBottom_toTopOf="@+id/commentBody"

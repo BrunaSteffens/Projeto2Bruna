@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Projeto2Bruna"
         tools:targetApi="31">
         <activity
-            android:name=".PhotosActivity"
+            android:name=".view.PhotosActivity"
             android:exported="false" />
         <activity
             android:name=".view.CommentsActivity"

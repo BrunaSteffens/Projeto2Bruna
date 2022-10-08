@@ -54,7 +54,6 @@ public class PostsRepository {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 Log.e(TAG, "onErrorResponse: " + error.getMessage());
-
                             }
                         });
         queue.add(jaRequest);
@@ -68,7 +67,7 @@ public class PostsRepository {
         return instance;
     }
 
-    public List<Posts> getPosts(Posts p){ return posts; }
+    public List<Posts> getPosts(){ return posts; }
 
     public Posts getPostById(int id){
         Posts ret = null;

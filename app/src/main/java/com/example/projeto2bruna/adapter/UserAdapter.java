@@ -1,6 +1,5 @@
 package com.example.projeto2bruna.adapter;
 
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.projeto2bruna.R;
-import com.example.projeto2bruna.model.Albums;
 import com.example.projeto2bruna.model.User;
-import com.example.projeto2bruna.view.AlbumActivity;
-import com.example.projeto2bruna.view.UsersActivity;
+
 
 import java.util.List;
 
@@ -41,13 +38,13 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         ((TextView) holder.itemView.findViewById(R.id.textViewId)).setText(objeto.getId() + "");
         ((TextView) holder.itemView.findViewById(R.id.textViewName)).setText(objeto.getName());
 
-        holder.itemView.setOnClickListener((view) -> {
+        /*holder.itemView.setOnClickListener((view) -> {
             Intent intent = new Intent(view.getContext(), UsersActivity.class);
             intent.putExtra("objetoUsuario", objeto);
             view.getContext().startActivity(intent);
             Log.d(TAG, "onBindViewHolder: Página do usuário " + objeto.getName());
             }
-        );
+        ); */
 
     }
 
@@ -56,6 +53,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return dados.size();
     }
 }
+
 class UserViewHolder extends RecyclerView.ViewHolder  {
         public View view;
 
@@ -64,5 +62,3 @@ class UserViewHolder extends RecyclerView.ViewHolder  {
             view = itemView;
         }
 }
-
-

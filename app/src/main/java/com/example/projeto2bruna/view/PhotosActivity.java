@@ -24,13 +24,7 @@ public class PhotosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_photos);
-
-        Log.d(TAG, "onCreate:  Iniciando a activity das fotos");
-
-        layout = DataBindingUtil.setContentView(this, R.layout.activity_photos);
-        Photos photos = getIntent().getParcelableExtra("objetoUsuario");
-        layout.setPhotos(photos);
+        setContentView(R.layout.activity_photos);
 
         RecyclerView rv = findViewById(R.id.recyclerPhotos);
         PhotosAdapter adapter = new PhotosAdapter(PhotosRepository.getInstance(this).getPhotos());

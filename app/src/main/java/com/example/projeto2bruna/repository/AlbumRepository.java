@@ -77,12 +77,7 @@ public class AlbumRepository {
         return instance;
     }
 
-    public List<Albums> getAlbums(int userId){
-        for (Albums a : albums){
-            if(a.getId() == userId){
-                albums.add(a);
-            }
-        }
+    public List<Albums> getAlbums(){
         return albums;
     }
 

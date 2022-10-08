@@ -73,6 +73,11 @@ public class User implements Parcelable {
 
     public String getName() { return name; }
 
+    public String getNameById(int id) {
+        if(this.id==id) {
+        }return name;
+    }
+
     public String getTitulo() {
         return userLogin+" - "+name+" ("+id+")";
     }

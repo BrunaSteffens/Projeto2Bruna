@@ -42,15 +42,6 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         ((TextView) holder.itemView.findViewById(R.id.commentTitle)).setText(objeto.getCommentTitle());
         ((EditText) holder.itemView.findViewById(R.id.commentBody)).setText(objeto.getCommentBody());
 
-        holder.itemView.setOnClickListener(
-                (view) ->{
-                    Intent intent = new Intent(view.getContext(), CommentsActivity.class);
-                    intent.putExtra("objetoUsuario", objeto);
-                    view.getContext().startActivity(intent);
-                    Log.d(TAG, "onBindViewHolder: Comments do post do usuário" + objeto.getName());
-                }
-        );
-
     }
 
     @Override

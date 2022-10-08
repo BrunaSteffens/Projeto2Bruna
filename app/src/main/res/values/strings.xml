@@ -6,10 +6,21 @@
     <string name="password">Senha</string>
     <string name="confirmar">Confirmar</string>
     <string name="userpassinvalid">Usuário ou senha inválidos</string>
-    <string name="listaUsuarios">Os usuários cadastrados são:</string>
+    <string name="escolhaOpcao">Escolha a opção:</string>
+    <string name="usuariosCadastrados">Os usuários cadastrados são:</string>
     <string name="albums">Álbuns do usuário</string>
     <string name="albumId">ID do álbum</string>
     <string name="albumTitle">Título do álbum</string>
     <string name="verAlbum">Ver álbuns</string>
+    <string name="verUsuários">Ver usuários</string>
+    <string name="verTarefas">Ver tarefas</string>
+    <string name="verFotos">Ver fotos</string>
+    <string name="verPosts">Ver posts</string>
+    <string name="verComentarios">Ver comentários</string>
+    <string name="UserId">ID do usuário</string>
+    <string name="userName">Nome do usuário</string>
+    <string name="Email">E-mail</string>
+
+
 
 </resources>
