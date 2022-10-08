@@ -46,10 +46,8 @@ public class AlbumsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         Albums objeto = albums.get(position);
         ((TextView) holder.itemView.findViewById(R.id.textViewAlbumId)).setText(objeto.getAlbumId()+"");
         ((TextView) holder.itemView.findViewById(R.id.textViewAlbumTitle)).setText(objeto.getTitle());
-        ((TextView) holder.itemView.findViewById(R.id.tvAlbumsUserId)).setText(objeto.getId() + "");
-        ((TextView) holder.itemView.findViewById(R.id.tvAlbumUserName)).setText(objeto.getName());
-
-
+        ((TextView) holder.itemView.findViewById(R.id.tvAlbumsUserId)).setText(objeto.getUser().getId()+"");
+        ((TextView) holder.itemView.findViewById(R.id.tvAlbumUserName)).setText(objeto.getUser().getName());
     }
 
     @Override

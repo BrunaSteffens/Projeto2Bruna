@@ -13,6 +13,11 @@ import com.example.projeto2bruna.R;
 import com.example.projeto2bruna.model.User;
 import com.example.projeto2bruna.presenter.LoginPresenter;
 import com.example.projeto2bruna.presenter.LoginPresenterContract;
+import com.example.projeto2bruna.repository.AlbumRepository;
+import com.example.projeto2bruna.repository.CommentsRepository;
+import com.example.projeto2bruna.repository.PhotosRepository;
+import com.example.projeto2bruna.repository.PostsRepository;
+import com.example.projeto2bruna.repository.TodosRepository;
 import com.example.projeto2bruna.repository.UserRepository;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -26,6 +31,12 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenterCo
         UserRepository.getInstance(this);
         setContentView(R.layout.activity_login);
 
+        UserRepository.getInstance(this);
+        AlbumRepository.getInstance(this);
+        PostsRepository.getInstance(this);
+        CommentsRepository.getInstance(this);
+        TodosRepository.getInstance(this);
+        PhotosRepository.getInstance(this);
 
         this.presenter = new LoginPresenter(this);
         findViewById(R.id.buttonLogin).setOnClickListener(

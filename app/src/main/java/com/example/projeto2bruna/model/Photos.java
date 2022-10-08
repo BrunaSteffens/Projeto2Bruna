@@ -3,51 +3,50 @@ package com.example.projeto2bruna.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Photos extends Albums implements Parcelable {
+import com.example.projeto2bruna.repository.AlbumRepository;
+
+public class Photos implements Parcelable {
+
+    private Albums album;
     private int photoId;
     private String photoTitle;
     private String photoUrl;
     private String photoThumbnailUrl;
 
     public Photos() {
-        super();
+
     }
 
-    public Photos(int id, String name, String userLogin, String password, String email, String phone,
-                  int photoId, String photoTitle, String photoUrl, String photoThmbnailUrl) {
-        super(id, name, userLogin, password, email, phone);
+    public Photos(int idAlbum, int photoId, String photoTitle, String photoUrl, String photoThmbnailUrl) {
+        this.album = AlbumRepository.getInstance().getAlbumById(idAlbum);
         this.photoId = photoId;
         this.photoTitle = photoTitle;
         this.photoUrl = photoUrl;
         this.photoThumbnailUrl = photoThumbnailUrl;
     }
 
-    public Photos(int id, String name, String userLogin, String password, String email, String phone,
-                  int albumId, String title,
-                  int photoId, String photoTitle, String photoUrl, String photoThumbnailUrl) {
-        super(id, name, userLogin, password, email, phone, albumId, title);
+    public Photos( int photoId, String photoTitle, String photoUrl, String photoThumbnailUrl) {
         this.photoId = photoId;
         this.photoTitle = photoTitle;
         this.photoUrl = photoUrl;
         this.photoThumbnailUrl = photoThumbnailUrl;
     }
 
-    public Photos(int id, int albumId, String title,
-                  int photoId, String photoTitle, String photoUrl, String photoThumbnailUrl) {
-        super(id, albumId, title);
-        this.photoId = photoId;
-        this.photoTitle = photoTitle;
-        this.photoUrl = photoUrl;
-        this.photoThumbnailUrl = photoThumbnailUrl;
+    protected Photos(Parcel in){
+        album = in.readParcelable(Albums.class.getClassLoader());
+        photoId = in.readInt();
+        photoTitle = in.readString();
+        photoUrl = in.readString();
+        photoThumbnailUrl = in.readString();
     }
 
-    public Photos(int albumId,
-                  int photoId, String photoTitle, String photoUrl, String photoThumbnailUrl) {
-        super(albumId);
-        this.photoId = photoId;
-        this.photoTitle = photoTitle;
-        this.photoUrl = photoUrl;
-        this.photoThumbnailUrl = photoThumbnailUrl;
+    @Override
+    public void writeToParcel(Parcel parcel, int i){
+        parcel.writeParcelable(album, 1);
+        parcel.writeInt(photoId);
+        parcel.writeString(photoTitle);
+        parcel.writeString(photoUrl);
+        parcel.writeString(photoThumbnailUrl);
     }
 
     public int getPhotoId() {
@@ -66,26 +65,7 @@ public class Photos extends Albums implements Parcelable {
         return photoThumbnailUrl;
     }
 
-    public int getPhotoByAlbumID(int i){
-        this.photoId = getAlbumId();
-        return photoId;
-    }
-
-    public Photos(Parcel in, int photoId, String photoTitle, String photoUrl, String photoThumbnailUrl) {
-        super(in);
-        this.photoId = photoId;
-        this.photoTitle = photoTitle;
-        this.photoUrl = photoUrl;
-        this.photoThumbnailUrl = photoThumbnailUrl;
-    }
-
-    protected Photos(Parcel in){
-        super(in);
-        photoId = in.readInt();
-        photoTitle = in.readString();
-        photoUrl = in.readString();
-        photoThumbnailUrl = in.readString();
-    }
+    public Albums getAlbum() { return album; }
 
     public static final Creator<Photos> CREATOR = new Creator<Photos>() {
         @Override
@@ -105,14 +85,4 @@ public class Photos extends Albums implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i){
-        parcel.writeInt(photoId);
-        parcel.writeString(photoTitle);
-        parcel.writeString(photoUrl);
-        parcel.writeString(photoThumbnailUrl);
-    }
-
-
 }

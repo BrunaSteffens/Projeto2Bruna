@@ -35,7 +35,7 @@ public class PostsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         ((TextView) holder.itemView.findViewById(R.id.postId)).setText(objeto.getPostId() + "");
         ((TextView) holder.itemView.findViewById(R.id.postTitle)).setText(objeto.getPostTitle());
         ((TextView) holder.itemView.findViewById(R.id.postBody)).setText(objeto.getPostBody());
-        //((TextView) holder.itemView.findViewById(R.id.tvPostsEmail)).setText(objeto.getEmailById(objeto.getId()));
+        ((TextView) holder.itemView.findViewById(R.id.tvPostsEmail)).setText(objeto.getUser().getEmail());
 
     }
 

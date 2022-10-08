@@ -3,32 +3,20 @@ package com.example.projeto2bruna.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Posts extends User implements Parcelable {
+import com.example.projeto2bruna.repository.UserRepository;
 
+public class Posts implements Parcelable {
+
+    private User user;
     private int postId;
     private String postTitle;
     private String postBody;
 
-    public Posts(){
-        super();
-    }
+    public Posts(){    }
 
-    public Posts(int id, int postId, String postTitle, String postBody) {
-        super(id);
-        this.postId = postId;
-        this.postTitle = postTitle;
-        this.postBody = postBody;
-    }
 
-    public Posts(int id, String name, String userLogin, String password, String email, String phone, int postId, String postTitle, String postBody) {
-        super(id, name, userLogin, password, email, phone);
-        this.postId = postId;
-        this.postTitle = postTitle;
-        this.postBody = postBody;
-    }
-
-    public Posts(Parcel in, int postId, String postTitle, String postBody) {
-        super(in);
+    public Posts(int idUser, int postId, String postTitle, String postBody) {
+        this.user = UserRepository.getInstance().getUserById(idUser);
         this.postId = postId;
         this.postTitle = postTitle;
         this.postBody = postBody;
@@ -41,10 +29,18 @@ public class Posts extends User implements Parcelable {
     }
 
     protected Posts(Parcel in){
-        super(in);
+        user = in.readParcelable(User.class.getClassLoader());
         postId = in.readInt();
         postTitle = in.readString();
         postBody = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i){
+        parcel.writeParcelable(user, 1);
+        parcel.writeInt(postId);
+        parcel.writeString(postTitle);
+        parcel.writeString(postBody);
     }
 
     public static final Creator<Posts> CREATOR = new Creator<Posts>() {
@@ -68,13 +64,6 @@ public class Posts extends User implements Parcelable {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i){
-        parcel.writeInt(postId);
-        parcel.writeString(postTitle);
-        parcel.writeString(postBody);
-    }
-
     public int getPostId() {
         return postId;
     }
@@ -86,4 +75,6 @@ public class Posts extends User implements Parcelable {
     public String getPostBody() {
         return postBody;
     }
+
+    public User getUser() {return user; }
 }

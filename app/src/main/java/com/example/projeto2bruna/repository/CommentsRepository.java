@@ -42,7 +42,7 @@ public class CommentsRepository {
                                 for (int i = 0; i < response.length(); i++) {
                                     try {
                                         JSONObject json = response.getJSONObject(i);
-                                        comments.add(new Comments(json.getInt("postId"), json.getInt("id"), json.getString("name"),
+                                        comments.add(new Comments(json.getInt("id"), json.getString("name"),
                                                 json.getString("email"), json.getString("body")));
                                         //int commentId, String commentTitle, String commentEmail, String commentBody
                                     } catch (JSONException e) {
@@ -72,18 +72,6 @@ public class CommentsRepository {
         Comments ret = null;
         for(Comments c:comments){
             if(c.getCommentId()==id){
-                ret = c;
-            }
-        }
-        return ret;
-    }
-
-    public Comments getCommentByPostId(int id){
-        Comments ret = null;
-        Log.d(TAG, "getPostByUserId: qtd de posts do user" +comments.size());
-        for(Comments c: comments){
-            if(c.getId() == id){
-                Log.d(TAG, "getPostByUserId: buscando os posts do userId"+c.getId());
                 ret = c;
             }
         }

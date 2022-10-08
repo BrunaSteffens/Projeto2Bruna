@@ -12,6 +12,11 @@ import android.widget.TextView;
 import com.example.projeto2bruna.R;
 import com.example.projeto2bruna.adapter.UserAdapter;
 import com.example.projeto2bruna.model.User;
+import com.example.projeto2bruna.repository.AlbumRepository;
+import com.example.projeto2bruna.repository.CommentsRepository;
+import com.example.projeto2bruna.repository.PhotosRepository;
+import com.example.projeto2bruna.repository.PostsRepository;
+import com.example.projeto2bruna.repository.TodosRepository;
 import com.example.projeto2bruna.repository.UserRepository;
 
 import java.net.URLStreamHandlerFactory;
@@ -25,13 +30,19 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Iniciando a MainActivity");
         setContentView(R.layout.activity_main);
 
+        /*UserRepository.getInstance(this);
+        AlbumRepository.getInstance(this);
+        PostsRepository.getInstance(this);
+        CommentsRepository.getInstance(this);
+        TodosRepository.getInstance(this);
+        PhotosRepository.getInstance(this); */
+
         findViewById(R.id.buttonUsers).setOnClickListener(
                 (view)->{
                     Intent intentUsers = new Intent(this, UsersActivity.class);
                     startActivity(intentUsers);
                     Log.d(TAG, "onCreate: Partiu para activity dos usuários");
                 }
-
         );
 
         findViewById(R.id.buttonAlbums).setOnClickListener(
@@ -58,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-
         findViewById(R.id.buttonComments).setOnClickListener(
                 (view) ->{
                     Intent intentComments = new Intent(this, CommentsActivity.class);
@@ -75,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "onCreate: Partiu para activity das Fotos");
                 }
         );
-
 
     }
 }

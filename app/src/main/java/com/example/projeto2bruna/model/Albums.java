@@ -3,41 +3,36 @@ package com.example.projeto2bruna.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Albums extends User implements Parcelable{
+import com.example.projeto2bruna.repository.UserRepository;
 
+public class Albums implements Parcelable{
+
+    private User user;
     private int albumId;
     private String title;
 
-    public Albums(int id, String name, String userLogin, String password, String email, String phone, int albumId, String title) {
-        super(id, name, userLogin, password, email, phone);
+    public Albums(){    }
+
+    public Albums(int userId, int albumId, String title) {
+        this.user = UserRepository.getInstance().getUserById(userId);
         this.albumId = albumId;
         this.title = title;
-    }
-
-    public Albums(int id, String name, String userLogin, String password, String email, String phone) {
-        super(id, name, userLogin, password, email, phone);
     }
 
     public Albums(int albumId) {
         this.albumId = albumId;
     }
 
-    public Albums(){
-        super();
-    }
 
-    public int getAlbumId() { return albumId; }
-
-    public String getTitle() { return title;}
-
-    public Albums(int id, int albumId, String title) {
-        super(id);
-        this.albumId = albumId;
-        this.title = title;
+    @Override
+    public void writeToParcel(Parcel parcel, int i){
+        parcel.writeParcelable(user, 1);
+        parcel.writeInt(albumId);
+        parcel.writeString(title);
     }
 
     protected Albums(Parcel in){
-        super(in);
+        user = in.readParcelable(User.class.getClassLoader());
         albumId = in.readInt();
         title = in.readString();
     }
@@ -61,11 +56,13 @@ public class Albums extends User implements Parcelable{
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i){
-        parcel.writeInt(albumId);
-        parcel.writeString(title);
+    public int getAlbumId() { return albumId; }
+
+    public String getTitle() { return title;}
+
+    public User getUser() { return user; }
+
+    public String getUserName() {
+        return getUser().getName();
     }
-
-
 }

@@ -49,6 +49,7 @@ public class AlbumRepository {
                                 Log.d(TAG, "onResponse: "+json.toString());
                                 albums.add(new Albums(json.getInt("userId"),
                                         json.getInt("id"), json.getString("title")));
+                                //int userId, int albumId, String title
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -77,6 +78,10 @@ public class AlbumRepository {
         return instance;
     }
 
+    public static AlbumRepository getInstance(){
+        return instance;
+    }
+
     public List<Albums> getAlbums(){
         return albums;
     }
@@ -88,18 +93,6 @@ public class AlbumRepository {
         for(Albums a : albums){
             Log.d(TAG, "getAlbumById: " + albumId+ " ->" +a.getAlbumId());
             if(a.getAlbumId()==albumId){
-                ret = a;
-            }
-        }
-        return ret;
-    }
-
-    public Albums getAlbumByUserId(int id){
-        Albums ret = null;
-        Log.d(TAG, "getAlbumByUserId: qtd de albuns do user" +albums.size());
-        for(Albums a: albums){
-            if(a.getId() == id){
-                Log.d(TAG, "getAlbumByUserId: buscando os posts do userId "+a.getId());
                 ret = a;
             }
         }

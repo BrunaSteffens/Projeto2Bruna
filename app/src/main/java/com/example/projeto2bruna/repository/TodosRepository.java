@@ -80,17 +80,4 @@ public class TodosRepository {
         }
         return ret;
     }
-
-    public Todos getTodoByUserId(int id){
-        Todos ret = null;
-        Log.d(TAG, "getTodoByUserId: qtd de posts do user" + todosList.size());
-        for(Todos t: todosList){
-            if(t.getId() == id){
-                Log.d(TAG, "getTodoByUserId: buscando os posts do userId"+t.getId());
-                ret = t;
-            }
-        }
-        return ret;
-    }
-
 }

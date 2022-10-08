@@ -44,7 +44,7 @@ public class PostsRepository {
                                         JSONObject json = response.getJSONObject(i);
                                         posts.add(new Posts(json.getInt("userId"), json.getInt("id"), json.getString("title"),
                                                 json.getString("body")));
-                                        //(int id, int postId, String postName, String postBody)
+                                        //int idUser, int postId, String postTitle, String postBody
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -67,6 +67,10 @@ public class PostsRepository {
         return instance;
     }
 
+    public static PostsRepository getInstance(){
+        return instance;
+    }
+
     public List<Posts> getPosts(){ return posts; }
 
     public Posts getPostById(int id){
@@ -78,17 +82,4 @@ public class PostsRepository {
         }
         return ret;
     }
-
-    public Posts getPostByUserId(int id){
-        Posts ret = null;
-        Log.d(TAG, "getPostByUserId: qtd de posts do user" +posts.size());
-        for(Posts p: posts){
-            if(p.getId() == id){
-                Log.d(TAG, "getPostByUserId: buscando os posts do userId"+p.getId());
-                ret = p;
-            }
-        }
-        return ret;
-    }
-
 }

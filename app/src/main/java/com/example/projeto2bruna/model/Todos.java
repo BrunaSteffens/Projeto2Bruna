@@ -3,35 +3,43 @@ package com.example.projeto2bruna.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Todos extends User implements Parcelable {
+import com.example.projeto2bruna.repository.UserRepository;
 
+public class Todos implements Parcelable {
+
+    private User user;
     private int todoId;
     private String todoTitle;
     private String todoStatus;
 
-    public Todos() {
-        super();
-    }
+    public Todos() { }
 
-    public Todos(int id, String name, String userLogin, String password, String email, String phone, int todoId, String todoTitle, String todoStatus) {
-        super(id, name, userLogin, password, email, phone);
+    public Todos(int idUser, int todoId, String todoTitle, String todoStatus) {
+        this.user = UserRepository.getInstance().getUserById(idUser);
         this.todoId = todoId;
         this.todoTitle = todoTitle;
         this.todoStatus = todoStatus;
     }
 
-    public Todos(int id, int todoId, String todoTitle, String todoStatus) {
-        super(id);
+    public Todos(int todoId, String todoTitle, String todoStatus) {
         this.todoId = todoId;
         this.todoTitle = todoTitle;
         this.todoStatus = todoStatus;
     }
 
     protected Todos(Parcel in){
-        super(in);
+        user = in.readParcelable(User.class.getClassLoader());
         todoId = in.readInt();
         todoTitle = in.readString();
         todoStatus = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i){
+        parcel.writeParcelable(user, 1);
+        parcel.writeInt(todoId);
+        parcel.writeString(todoTitle);
+        parcel.writeString(todoStatus);
     }
 
     public int getTodoId() {
@@ -45,6 +53,8 @@ public class Todos extends User implements Parcelable {
     public String getTodoStatus() {
         return todoStatus;
     }
+
+    public User getUser() { return user; }
 
     public static final Creator<Todos> CREATOR = new Creator<Todos>() {
         @Override
@@ -61,13 +71,6 @@ public class Todos extends User implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i){
-        parcel.writeInt(todoId);
-        parcel.writeString(todoTitle);
-        parcel.writeString(todoStatus);
     }
 
 }

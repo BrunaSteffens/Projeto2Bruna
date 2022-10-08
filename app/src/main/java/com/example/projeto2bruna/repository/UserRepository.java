@@ -76,6 +76,11 @@ public class UserRepository {
         return instance;
     }
 
+    public static UserRepository getInstance(){
+
+        return instance;
+    }
+
     public List<User> getUsers() {
         return users;
     }

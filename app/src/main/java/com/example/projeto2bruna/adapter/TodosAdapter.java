@@ -40,8 +40,8 @@ public class TodosAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         ((TextView) holder.itemView.findViewById(R.id.vhTodoId)).setText(objeto.getTodoId() + "");
         ((TextView) holder.itemView.findViewById(R.id.vhTodoTitle)).setText(objeto.getTodoTitle());
         ((TextView) holder.itemView.findViewById(R.id.vhTodoStatus)).setText(objeto.getTodoStatus());
-        ((TextView) holder.itemView.findViewById(R.id.tvTodoUserId)).setText(objeto.getId()+"");
-        ((TextView) holder.itemView.findViewById(R.id.tvTodoUserName)).setText(objeto.getNameById(objeto.getId()));
+        ((TextView) holder.itemView.findViewById(R.id.tvTodoUserId)).setText(objeto.getUser().getId()+"");
+        ((TextView) holder.itemView.findViewById(R.id.tvTodoUserName)).setText(objeto.getUser().getName());
 
     }
 

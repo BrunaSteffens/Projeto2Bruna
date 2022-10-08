@@ -46,6 +46,7 @@ public class PhotosRepository {
                                 Log.d(TAG, "onResponse: " + json.toString());
                                 photos.add(new Photos( json.getInt("albumId"),
                                         json.getInt("id"), json.getString("title"), json.getString("url"), json.getString("thumbnailUrl")));
+                                //int idAlbum, int photoId, String photoTitle, String photoUrl, String photoThmbnailUrl
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -83,18 +84,6 @@ public class PhotosRepository {
         for(Photos p : photos){
             Log.d(TAG, "getPhotoById: " + photoId+ " ->" +p.getPhotoId());
             if(p.getPhotoId()==photoId){
-                ret = p;
-            }
-        }
-        return ret;
-    }
-
-    public Photos getPhotoByAlbumId(int id){
-        Photos ret = null;
-        Log.d(TAG, "getPhotoByalbumId: qtd de fotos do user" +photos.size());
-        for(Photos p: photos){
-            if(p.getId() == id){
-                Log.d(TAG, "getPhotoByAlbumId: buscando as fotos do albumId"+p.getId());
                 ret = p;
             }
         }

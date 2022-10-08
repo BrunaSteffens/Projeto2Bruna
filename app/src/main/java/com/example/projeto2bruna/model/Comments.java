@@ -3,39 +3,27 @@ package com.example.projeto2bruna.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Comments extends Posts implements Parcelable {
+import com.example.projeto2bruna.repository.PostsRepository;
 
+public class Comments implements Parcelable {
+
+    private Posts post;
     private int commentId;
     private String commentTitle;
     private String commentEmail;
     private String commentBody;
 
-    public Comments() {
-        super();
-    }
+    public Comments() {    }
 
-    public Comments(int id, String name, String userLogin, String password, String email, String phone,
-                    int postId, String postName, String postBody,
-                    int commentId, String commentTitle, String commentEmail, String commentBody) {
-        super(id, name, userLogin, password, email, phone, postId, postName, postBody);
+    public Comments(int idPost, int commentId, String commentTitle, String commentEmail, String commentBody) {
+        this.post = PostsRepository.getInstance().getPostById(idPost);
         this.commentId = commentId;
         this.commentTitle = commentTitle;
         this.commentEmail = commentEmail;
         this.commentBody = commentBody;
     }
 
-    public Comments(int id,
-                    int commentId, String commentTitle, String commentEmail, String commentBody) {
-        super(id);
-        this.commentId = commentId;
-        this.commentTitle = commentTitle;
-        this.commentEmail = commentEmail;
-        this.commentBody = commentBody;
-    }
-
-    public Comments(Parcel in,
-                    int commentId, String commentTitle, String commentEmail, String commentBody) {
-        super(in);
+    public Comments(int commentId, String commentTitle, String commentEmail, String commentBody) {
         this.commentId = commentId;
         this.commentTitle = commentTitle;
         this.commentEmail = commentEmail;
@@ -43,11 +31,20 @@ public class Comments extends Posts implements Parcelable {
     }
 
     protected Comments(Parcel in){
-        super(in);
+        post = in.readParcelable(Posts.class.getClassLoader());
         commentId = in.readInt();
         commentTitle = in.readString();
         commentEmail = in.readString();
         commentBody = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i){
+        parcel.writeParcelable(post, 1);
+        parcel.writeInt(commentId);
+        parcel.writeString(commentTitle);
+        parcel.writeString(commentEmail);
+        parcel.writeString(commentBody);
     }
 
     public static final Creator<Comments> CREATOR = new Creator<Comments>() {
@@ -67,14 +64,6 @@ public class Comments extends Posts implements Parcelable {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i){
-        parcel.writeInt(commentId);
-        parcel.writeString(commentTitle);
-        parcel.writeString(commentEmail);
-        parcel.writeString(commentBody);
-    }
-
     public int getCommentId() {
         return commentId;
     }
@@ -90,4 +79,6 @@ public class Comments extends Posts implements Parcelable {
     public String getCommentBody() {
         return commentBody;
     }
+
+    public Posts getPost() { return post; }
 }
