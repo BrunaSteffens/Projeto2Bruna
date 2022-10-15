@@ -1,25 +1,10 @@
 package com.example.projeto2bruna.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
-
 import com.example.projeto2bruna.R;
-import com.example.projeto2bruna.adapter.UserAdapter;
-import com.example.projeto2bruna.model.User;
-import com.example.projeto2bruna.repository.AlbumRepository;
-import com.example.projeto2bruna.repository.CommentsRepository;
-import com.example.projeto2bruna.repository.PhotosRepository;
-import com.example.projeto2bruna.repository.PostsRepository;
-import com.example.projeto2bruna.repository.TodosRepository;
-import com.example.projeto2bruna.repository.UserRepository;
-
-import java.net.URLStreamHandlerFactory;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "MainActivity";
@@ -30,12 +15,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Iniciando a MainActivity");
         setContentView(R.layout.activity_main);
 
-        /*UserRepository.getInstance(this);
-        AlbumRepository.getInstance(this);
-        PostsRepository.getInstance(this);
-        CommentsRepository.getInstance(this);
-        TodosRepository.getInstance(this);
-        PhotosRepository.getInstance(this); */
 
         findViewById(R.id.buttonUsers).setOnClickListener(
                 (view)->{

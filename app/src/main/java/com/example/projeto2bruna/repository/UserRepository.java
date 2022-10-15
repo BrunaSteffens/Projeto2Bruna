@@ -30,6 +30,7 @@ public class UserRepository {
     private static UserRepository instance;
     private Context contexto;
     private final String TAG = "UserRepository";
+    private OnReadyListener onReadyListener;
 
     private UserRepository(Context contexto){
         super();
@@ -69,15 +70,21 @@ public class UserRepository {
 
     }
 
-    public static UserRepository getInstance(Context contexto){
+    public static UserRepository getInstance(Context contexto, OnReadyListener orl){
         if (instance== null){
             instance = new UserRepository(contexto);
+            instance.onReadyListener = orl;
+        }
+        if (!instance.getUsers().isEmpty()){
+            if (orl != null){
+                orl.onReady();
+                instance.onReadyListener = null;
+            }
         }
         return instance;
     }
 
     public static UserRepository getInstance(){
-
         return instance;
     }
 

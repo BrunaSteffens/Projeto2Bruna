@@ -22,21 +22,13 @@ import com.example.projeto2bruna.repository.UserRepository;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LoginActivity extends AppCompatActivity implements LoginPresenterContract.view {
-
+    private static final String TAG = "LoginActivity";
     private LoginPresenterContract.presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        UserRepository.getInstance(this);
         setContentView(R.layout.activity_login);
-
-        UserRepository.getInstance(this);
-        AlbumRepository.getInstance(this);
-        PostsRepository.getInstance(this);
-        CommentsRepository.getInstance(this);
-        TodosRepository.getInstance(this);
-        PhotosRepository.getInstance(this);
 
         this.presenter = new LoginPresenter(this);
         findViewById(R.id.buttonLogin).setOnClickListener(
